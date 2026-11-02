@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f2f1ee;
+  --background-secondary: #e9e8e4;
+  --foreground: #1f2937;
+  --text-pen: #737273;
+  --text-h: #010101;
+  --card: #f2f1ee;
+  --line: #d4d3d1;
+  --accent: #d97706;
+  --muted: #717171;
+  --border: #e2dccd;
+  --danger: #b91c1c;
+  --success: #15803d;
+  --warning: #b45309;
+  --grey-0: #939393;
+  --grey-1: #7a7a7b;
+  --grey-2: #616162;
+  --grey-dim: #b7b7b7;
+  --radius: 1.25rem;
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: "Inter", sans-serif;
+  --heading: "Fraunces", serif;
+}
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #060607;
+    --background-secondary: #131316;
+    --text-pen: #858585;
+    --text-h: #fafafb;
+    --card: #121316;
+    --line: #303134;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}*/
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-bg-sec: var(--background-secondary);
+  --color-fg: var(--foreground);
+  --color-pen: var(--text-pen);
+  --color-heading: var(--text-h);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-line: var(--line);
+  --color-border: var(-border);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --radius: var(--radius);
+  --shadow: var(--shadow);
+  --border-line: var(--line);
+}
+
+#root {
+  min-height: 100svh;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* buttons, fields, cards, tables */
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90;
+  }
+  .btn-accent {
+    @apply bg-accent text-white hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply text-muted-foreground hover:bg-muted;
+  }
+  .input {
+    @apply w-full rounded-md border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary;
+  }
+  .card-container {
+    @apply grid grid-cols-3;
+  }
+  .card-container > * {
+    @apply border border-line bg-card p-6 transition-all cursor-pointer;
+  }
+  .card-container > *:not(:first-child) {
+    @apply border-l-0;
+  }
+  .card-container > *:nth-child(3n + 1) {
+    @apply border-l-line;
+  }
+  .card-container > *:nth-child(n + 4) {
+    @apply border-t-0;
+  }
+  .table {
+    @apply w-full text-left text-sm;
+  }
+  .table th {
+    @apply border-b border-border px-3 py-2 font-medium text-muted-foreground;
+  }
+  .table td {
+    @apply border-b border-border px-3 py-2;
+  }
+}
+
+@layer base {
+  p {
+    @apply text-pen;
+  }
+  h1, h2, h3 {
+    @apply text-heading;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  font-family: var(--heading);
+}
+
+h1 {
+  font-size: 2.9rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+p {
+  margin-bottom: 5px;
+  font-family: var(--sans);
+}
