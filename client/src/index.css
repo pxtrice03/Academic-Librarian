@@ -36,11 +36,7 @@
     --line: #303134;
     --bg: #16171d;
     --border: #2e303a;
-    --code-bg: #1f2028;
     --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
@@ -85,21 +81,6 @@ body {
 
 /* buttons, fields, cards, tables */
 @layer components {
-  .btn {
-    @apply inline-flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
-  }
-  .btn-primary {
-    @apply bg-primary text-primary-foreground hover:opacity-90;
-  }
-  .btn-accent {
-    @apply bg-accent text-white hover:opacity-90;
-  }
-  .btn-ghost {
-    @apply text-muted-foreground hover:bg-muted;
-  }
-  .input {
-    @apply w-full rounded-md border border-border bg-card px-3 py-2 text-sm outline-none focus:border-primary;
-  }
   .card-container {
     @apply grid grid-cols-3;
   }
@@ -115,6 +96,9 @@ body {
   .card-container > *:nth-child(n + 4) {
     @apply border-t-0;
   }
+  .list {
+    @apply py-1 px-6;
+  }
   .table {
     @apply w-full text-left text-sm;
   }
@@ -123,15 +107,6 @@ body {
   }
   .table td {
     @apply border-b border-border px-3 py-2;
-  }
-}
-
-@layer base {
-  p {
-    @apply text-pen;
-  }
-  h1, h2, h3 {
-    @apply text-heading;
   }
 }
 
