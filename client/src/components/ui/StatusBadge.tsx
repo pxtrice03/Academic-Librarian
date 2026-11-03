@@ -9,7 +9,7 @@ const STYLES: Record<string, [string, string]> = {
 }
 
 interface StatusBadgeProps {
-    status: strings
+    status: strings;
 }
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {
@@ -17,4 +17,4 @@ const StatusBadge = ({ status }: StatusBadgeProps) => {
     return <span className={`rounded-full px-2 py-0.5 text-sm font-medium ${cls}`}>{label}</span>
 }
 
-export default StatusBadge
+export default StatusBadge;
