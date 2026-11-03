@@ -31,7 +31,7 @@
       "@config/*": ["./src/config/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@types/*": ["./src/types/*"],
-      "@utiils/*": ["./src/utils/*"],
+      "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"]
     }
   },
