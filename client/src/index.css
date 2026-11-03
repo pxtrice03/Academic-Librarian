@@ -110,7 +110,7 @@ body {
     @apply border-l-0;
   }
   .card-container > *:nth-child(3n + 1) {
-    @apply border-l-line;
+    @apply border-l border-line;
   }
   .card-container > *:nth-child(n + 4) {
     @apply border-t-0;
