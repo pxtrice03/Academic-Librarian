@@ -16,15 +16,16 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, './src'),
-      '@components': path.join(__dirname, './src/components'),
-      '@routes': path.join(__dirname, './src/routes'),
-      '@pages': path.join(__dirname, './src/pages'),
-      '@config': path.join(__dirname, './src/config'),
-      '@hooks': path.join(__dirname, './src/hooks'),
-      '@types': path.join(__dirname, './src/types'),
-      '@utils': path.join(__dirname, './src/utils'),
-      '@services': path.join(__dirname, './src/services')
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@routes': path.resolve(__dirname, './src/routes'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@config': path.resolve(__dirname, './src/config'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@types': path.resolve(__dirname, './src/types'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@services': path.resolve(__dirname, './src/services'),
+      '@libs': path.resolve(__dirname, './src/libs')
     }
   }
 })
