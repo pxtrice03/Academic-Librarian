@@ -9,7 +9,10 @@
   --text-h: #010101;
   --card: #f2f1ee;
   --line: #d4d3d1;
-  --accent: #d97706;
+  --primary: #060607;
+  --primary-foreground: #131316;
+  --accent: #e08dff;
+  --accent-foreground: #1b2a41;
   --muted: #717171;
   --border: #e2dccd;
   --danger: #b91c1c;
@@ -34,11 +37,14 @@
     --text-h: #fafafb;
     --card: #121316;
     --line: #303134;
-    --bg: #16171d;
+    --primary: #f2f1ee;
+    --primary-foreground: #e9e8e4;
     --border: #2e303a;
     --accent: #c084fc;
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --danger: #b91c1c;
+    --success: #15803d;
+    --warning: #b45309;
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {
@@ -48,7 +54,7 @@
 
 @theme inline {
   --color-bg: var(--background);
-  --color-bg-sec: var(--background-secondary);
+  --color-sec: var(--background-secondary);
   --color-fg: var(--foreground);
   --color-pen: var(--text-pen);
   --color-heading: var(--text-h);
@@ -56,6 +62,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-line: var(--line);
@@ -63,9 +70,22 @@
   --color-danger: var(--danger);
   --color-success: var(--success);
   --color-warning: var(--warning);
-  --radius: var(--radius);
+  --radius-round: var(--radius);
   --shadow: var(--shadow);
   --border-line: var(--line);
+  --font-sans: var(--sans);
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-pen text-md font-sans m-0 antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-bold font-heading;
+  }
+  p {
+    @apply font-sans mb-2;
+  }
 }
 
 #root {
@@ -73,19 +93,13 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
 /* buttons, fields, cards, tables */
 @layer components {
   .card-container {
-    @apply grid grid-cols-3;
+    @apply grid gap-6 md:grid-cols-2;
   }
   .card-container > * {
-    @apply border border-line bg-card p-6 transition-all cursor-pointer;
+    @apply border border-line bg-card transition-all cursor-pointer;
   }
   .card-container > *:not(:first-child) {
     @apply border-l-0;
@@ -110,10 +124,10 @@ body {
   }
 }
 
-h1, h2, h3 {
+/*h1, h2, h3 {
   font-weight: 700;
   font-family: var(--heading);
-}
+}*/
 
 h1 {
   font-size: 2.9rem;
@@ -127,7 +141,29 @@ h3 {
   font-size: 1.4rem;
 }
 
-p {
+/*p {
   margin-bottom: 5px;
   font-family: var(--sans);
+}*/
+
+/* Reveal on scroll - initial state masked, shifted downwards */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Final state added by useReveal when element enters the screen */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Lenis style from doc */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
