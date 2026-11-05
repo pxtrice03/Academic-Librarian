@@ -2,6 +2,9 @@ import { createBrowserRouter } from 'react-router';
 import Home from '@pages/Home';
 import RegistrationPage from '@pages/RegistrationPage';
 import LoginPage from '@pages/LoginPage';
+import EstablishmentLayout from "@components/layout/EstablishmentLayout";
+import PagePlaceholder from "@pages/PagePlaceholder";
+import { establishmentNav } from "@libs/navigation";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +18,15 @@ const router = createBrowserRouter([
     {
         path: '/connexion',
         element: <LoginPage />
+    },
+    {
+        path: '/e',
+        element: <EstablishmentLayout />,
+        children: establishmentNav.map(({ path, label }) =>
+            path
+                ? { path, element: <PagePlaceholder title={label} /> }
+                : { index: true, element: <PagePlaceholder title={label} /> }
+        )
     }
 ]);
 
