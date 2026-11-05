@@ -2,11 +2,11 @@ import { NavLink } from 'react-router';
 import { Library } from 'lucide-react';
 import { cn } from '@libs/utils';
 import { APP_NAME } from '@libs/constants';
-import { button } from '@libs/constants';
+import { button } from '@libs/style';
 
 const links = [
     { to: '/#functions', label: 'Fonctionnalites' },
-    { to: '/launch', label: 'Comment demarrer' }
+    { to: '/#launch', label: 'Comment demarrer' }
 ];
 
 const NavBar = () => (
@@ -19,19 +19,27 @@ const NavBar = () => (
             <div className="hidden items-center gap-8 text-muted md:flex">
                 {links.map(({ to, label }) => (
                     <NavLink key={to} to={to} className="hover:text-accent">
-                    {label}
+                        {label}
                     </NavLink>
                 ))}
             </div>
 
-            <NavLink
-                to="/#launch"
-                className={cn(button, "bg-accent text-primary-foreground duration-500 hover:bg-accent/90")}
-            >
-                Commencer
-            </NavLink>
+            <div className="flex items-center gap-6">
+                <NavLink
+                    to="/inscription"
+                    className={cn(button, "bg-accent text-accent-foreground duration-500 hover:bg-accent/90")}
+                >
+                    Commencer
+                </NavLink>
+                <NavLink
+                    to='/connexion'
+                    className="hidden text-muted-foreground hover:text-foreground md:block"
+                >
+                    Connexion
+                </NavLink>
+            </div>
         </nav>
     </header>
-)
+);
 
 export default NavBar;
