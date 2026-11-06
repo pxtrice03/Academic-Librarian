@@ -8,14 +8,15 @@ import {
     History,
     Rocket,
     ShieldCheck,
-    Users
+    Users,
 } from 'lucide-react';
 import { cn } from '@libs/utils';
 import useLenis from '@hooks/useLenis';
 import useReveal from '@hooks/useReveal';
 import NavBar from '@components/layout/NavBar';
-import { button } from '@libs/constants';
+import { button } from '@libs/style';
 import Footer from '@components/layout/Footer';
+import { NavLink } from 'react-router';
 
 type Item = {
     icon: LucideIcon;
@@ -98,12 +99,12 @@ const Home = () => {
 
                         {/* CTA */}
                         <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4">
-                            <a href="#demarrer" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
-                                Enregister votre etablissement <ArrowRight className="size-4" />
-                            </a>
-                            <a href="#fonctions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
+                            <NavLink to="/inscription" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
+                                Enregister mon etablissement <ArrowRight className="size-4" />
+                            </NavLink>
+                            <NavLink to="#fonctions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
                                 Decouvrir
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </section>
@@ -146,7 +147,7 @@ const Home = () => {
                                     style={{ transitionDelay: `${(i % 2) * 100}ms` }}
                                     className="flex gap-4 border border-line bg-card p-6"
                                 >
-                                    <span className="flex size-10  shrink-0 items-center justify-center rounded-full bg-accent font-bold text-primary-foreground">
+                                    <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent font-bold text-primary-foreground">
                                         {i + 1}
                                     </span>
                                     <div>
@@ -169,9 +170,9 @@ const Home = () => {
                             <p className="opacity-80">
                                 L'inscription de votre etablissement prend quelques minutes.
                             </p>
-                            <a href="#top" className={cn(button, "mt-8 bg-accent text-accent-foreground hover:bg-accent/90")}>
-                                Enregistrer mon etablissement <ArrowRight className="size-4" />
-                            </a>
+                            <NavLink to="/inscription" className={cn(button, "mt-8 bg-accent text-accent-foreground hover:bg-accent/90")}>
+                                Enregistrer mon établissement <ArrowRight className="size-4" />
+                            </NavLink>
                         </div>
                     </div>
                 </section>
