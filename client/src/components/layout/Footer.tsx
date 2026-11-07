@@ -1,8 +1,12 @@
-import { APP_NAME } from '@libs/constants';
+import Mascot from "@components/Mascot";
+import { APP_NAME } from "@libs/constants";
 
 const Footer = () => (
-    <footer className="bg-sec border-t border-line py-2 text-center text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} {APP_NAME} : "Je gere 😉". Made with ♥️ by <a href="https://github.com/pxtrice03" className="underline transition-colors durantion-500 hover:text-accent" target="__blank">pxtrice03</a>
+    // relative: reference for the absolutely positioned mascot
+    <footer className="relative border-t border-line py-8 text-center text-sm text-muted-foreground">
+        {/* -top-18 lifts the mascot so its feet rest on the border line */}
+        <Mascot pose="wave" className="absolute -top-18 left-1/2 w-20 -translate-x-1/2" />
+        &copy; {new Date().getFullYear()} {APP_NAME} · Made with ♥️ by <a href="https://github.com/pxtrice03" className="underline transition-colors duration-500 hover:text-accent">@pxtrice</a>
     </footer>
 );
 
