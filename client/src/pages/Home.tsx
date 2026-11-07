@@ -83,32 +83,6 @@ const Home = () => {
 
             {/* MAIN SECTION */}
             <main id="top">
-                {/* Hero */}
-                <section className="px-6 py-8 text-center border-b border-line md:py-30">
-                    <div className="max-w-6xl mx-auto">
-                        <span data-reveal className="hidden rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-sm font-medium text-muted-foreground md:inline-block">
-                            Pour les etablissements scolaires et universitaires de Douala
-                        </span>
-
-                        <h1 data-reveal style={{ transitionDelay: "100ms" }} className="mt-6 text-xl font-bold leading-tight text-balance md:text-6xl">
-                            La bibliotheque de votre etablissement, <span className="text-accent">en ligne</span>
-                        </h1>
-
-                        <p data-reveal style={{ transitionDelay: "200ms" }} className="mt-4 text-muted-foreground">
-                            Publiez vos livres, ouvrez l'access a vos lecteurs et suivez chaque emprunt, retour et reservation au meme endroit.
-                        </p>
-
-                        {/* CTA */}
-                        <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4">
-                            <NavLink to="/inscription" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
-                                Enregister mon etablissement <ArrowRight className="size-4" />
-                            </NavLink>
-                            <NavLink to="#fonctions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
-                                Decouvrir
-                            </NavLink>
-                        </div>
-                    </div>
-                </section>
                 {/* HERO: text on the left, mascot on the right (stacked on mobile) */}
                 <section className="border-b border-line">
                     <div className="max-w-6xl mx-auto grid items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-30">
@@ -209,7 +183,7 @@ const Home = () => {
                 </section>
             </main>
 
-            <Footer />
+            <Footer mascot={Mascot} />
         </div>
     );
 }
