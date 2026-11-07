@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import NavBar from '@components/layout/NavBar';
 import Footer from '@components/layout/Footer';
+import Mascot from '@components/Mascot';
 
 type AuthLayoutProps = {
     title: string; // cart title
@@ -32,7 +33,7 @@ const AuthLayout = ({
             </div>
         </main>
 
-        <Footer />
+        <Footer mascot={Mascot} />
     </div>
 );
 
