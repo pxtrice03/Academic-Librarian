@@ -84,7 +84,7 @@
     @apply font-bold font-heading;
   }
   p {
-    @apply font-sans mb-2;
+    @apply font-sans text-md mb-2;
   }
 }
 
@@ -140,10 +140,20 @@ h3 {
   font-size: 1.4rem;
 }
 
-/*p {
-  margin-bottom: 5px;
-  font-family: var(--sans);
-}*/
+/* Mascot: waving arm, pivoting around its base */
+@keyframes mascot-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-16deg); }
+}
+.mascot-wave {
+  transform-box: fill-box; /* pivot relative to the arm itself, not the whole SVG */
+  transform-origin: 50% 90%; /* pivot near the shoulder */
+  animation: mascot-wave 1.6s ease-in-out infinite;
+}
+/* accessibility: no animation if the user disables motion */
+@media (prefers-reduced-motion: reduce) {
+  .mascot-wave { animation: none; }
+}
 
 /* Reveal on scroll - initial state masked, shifted downwards */
 [data-reveal] {
