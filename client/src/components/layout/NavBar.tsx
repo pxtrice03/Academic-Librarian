@@ -33,7 +33,7 @@ const NavBar = () => (
                 </NavLink>
                 <NavLink
                     to='/connexion'
-                    className="hidden text-muted-foreground hover:text-foreground md:block"
+                    className={cn(button, "hidden text-accent md:block md:border md:border-accent hover:text-foreground hover:bg-accent/10")}
                 >
                     Connexion
                 </NavLink>

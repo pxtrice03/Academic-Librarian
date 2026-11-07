@@ -17,6 +17,7 @@ import NavBar from '@components/layout/NavBar';
 import { button } from '@libs/style';
 import Footer from '@components/layout/Footer';
 import { NavLink } from 'react-router';
+import Mascot from '@components/Mascot';
 
 type Item = {
     icon: LucideIcon;
@@ -108,6 +109,36 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+                {/* HERO: text on the left, mascot on the right (stacked on mobile) */}
+                <section className="border-b border-line">
+                    <div className="max-w-6xl mx-auto grid items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-30">
+                        <div className="text-center md:text-left">
+                            <span data-reveal className="inline-block rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground">
+                                Pour les établissements scolaires et universitaires de Douala
+                            </span>
+                            <h1 data-reveal style={{ transitionDelay: "100ms" }} className="mt-6 max-w-3xl text-4xl font-bold leading-tight text-balance md:text-5xl">
+                                La bibliothèque de votre établissement, <span className="text-accent">en ligne</span>.
+                            </h1>
+                            <p data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-2xl text-muted-foreground">
+                                Publiez vos livres, ouvrez l'accès à vos lecteurs et suivez chaque emprunt, retour et réservation au même endroit.
+                            </p>
+                            {/* centered on mobile, left-aligned on desktop */}
+                            <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
+                                <NavLink to="/inscription" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
+                                    Enregistrer mon établissement <ArrowRight className="size-4" />
+                                </NavLink>
+                                <NavLink to="/#fonctions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
+                                    Découvrir
+                                </NavLink>
+                            </div>
+                        </div>
+
+                        {/* mascot: waving, revealed on scroll */}
+                        <div data-reveal style={{ transitionDelay: "200ms" }} className="mx-auto w-64 md:w-full md:max-w-sm">
+                            <Mascot pose="wave" className="w-full" />
+                        </div>
+                    </div>
+                </section>
 
                 {/* Functionalities */}
                 <section id="functions" className="bg-sec py-10 border-b border-line md:py-24">
@@ -124,7 +155,7 @@ const Home = () => {
                                 >
                                     <Icon className="size-8 text-center" />
                                     <h3 className="mt-4 font-semibold">{title}</h3>
-                                    <p className="mt-2 text-sm text-muted-foreground">{text}</p>
+                                    <p className="mt-2 text-muted-foreground">{text}</p>
                                 </article>
                             ))}
                         </div>
@@ -154,7 +185,7 @@ const Home = () => {
                                         <h3 className="flex items-center gap-2 font-semibold">
                                             {title} <Icon className="size-4 text-accent" />
                                         </h3>
-                                        <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+                                        <p className="mt-1 text-muted-foreground">{text}</p>
                                     </div>
                                 </li>
                             ))}

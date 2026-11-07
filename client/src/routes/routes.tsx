@@ -5,6 +5,7 @@ import LoginPage from '@pages/LoginPage';
 import EstablishmentLayout from "@components/layout/EstablishmentLayout";
 import PagePlaceholder from "@pages/PagePlaceholder";
 import { establishmentNav } from "@libs/navigation";
+import NotFoundPage from '@pages/NotFoundPage';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
                 ? { path, element: <PagePlaceholder title={label} /> }
                 : { index: true, element: <PagePlaceholder title={label} /> }
         )
+    },
+    {
+        path: '*',
+        element: <NotFoundPage />
     }
 ]);
 
