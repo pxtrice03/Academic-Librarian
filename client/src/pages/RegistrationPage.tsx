@@ -12,6 +12,7 @@ import Footer from '@components/layout/Footer';
 import FormField from '@components/ui/FormField';
 import { cn } from '@libs/utils';
 import { button, input } from '@libs/style';
+import Mascot from '@components/Mascot';
 
 type Field = {
     id: string;
@@ -79,7 +80,7 @@ const RegistrationPage = () => (
             </div>
         </main>
 
-        <Footer />
+        <Footer mascot={Mascot} />
     </div>
 );
 
