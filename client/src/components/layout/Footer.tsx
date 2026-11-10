@@ -12,7 +12,7 @@ const Footer = ({ mascot }: FooterProps) => (
         ) : (
             ""
         )}
-        &copy; {new Date().getFullYear()} {APP_NAME} · Made with ♥️ by <a href="https://github.com/pxtrice03" className="underline transition-colors duration-500 hover:text-accent">@pxtrice</a>
+        &copy; {new Date().getFullYear()} {APP_NAME} · Made with ♥️ by <a href="https://github.com/pxtrice03" className="underline transition-colors duration-500 hover:text-accent">@pxtrice03</a>
     </footer>
 );
 
