@@ -81,7 +81,7 @@
     @apply bg-bg text-pen text-md font-sans m-0 antialiased;
   }
   h1, h2, h3 {
-    @apply font-bold font-heading;
+    @apply font-bold font-heading color-[#000000];
   }
   p {
     @apply font-sans text-md mb-2;
@@ -126,18 +126,6 @@
   .table td {
     @apply border-b border-border px-3 py-2;
   }
-}
-
-h1 {
-  font-size: 2.9rem;
-}
-
-h2 {
-  font-size: 2.4rem;
-}
-
-h3 {
-  font-size: 1.4rem;
 }
 
 /* Mascot: waving arm, pivoting around its base */
