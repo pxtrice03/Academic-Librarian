@@ -17,7 +17,7 @@ type Field = {
 
 // connection fields : rendered by map
 const fields: Field[] = [
-    { id: 'email', label: 'Adresse email', type: 'email', placeholder: 'vous@exemple.cm', icon: Mail, autoComplete: 'email' },
+    { id: 'email', label: 'Adresse email', type: 'email', placeholder: 'vous@exemple.cm', icon: Mail, autoComplete: 'false' },
     { id: 'password', label: 'Mot de passe', type: 'password', placeholder: 'Votre mot de passe', icon: Lock, autoComplete: 'current-password' }
 ];
 
