@@ -25,7 +25,7 @@ type Field = {
 const fields: Field[] = [
     { id: 'name', label: "Nom de l'etablissement", type: 'text', placeholder: 'Universite de Douala', icon: Building2, autoComplete: 'organization' },
     { id: 'city', label: 'Ville / quartier', type: 'text', placeholder: 'Douala, Bonaberi', icon: MapPin, autoComplete: 'address-levels' },
-    { id: 'email', label: 'Email de contact', type: 'email', placeholder: 'contact@etablissement.cm', icon: Mail, autoComplete: 'email' },
+    { id: 'email', label: 'Email de contact', type: 'email', placeholder: 'contact@etablissement.cm', icon: Mail, autoComplete: 'off' },
     { id:'password', label: 'Mot de passe', type: 'password', placeholder: '8 caracteres minimum', icon: Lock, autoComplete: 'new-password' }
 ];
 
@@ -63,7 +63,7 @@ const RegistrationPage = () => (
             ))}
 
             {/* submit button full width */}
-            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-accent-foregound hover:bg-accent/90")}>
+            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-sm text-primary-foreground hover:bg-accent/90")}>
                 Creer le compte de l'etalbissement
             </button>
         </form>
