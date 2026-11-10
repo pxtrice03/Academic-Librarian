@@ -7,6 +7,7 @@ import {
     Search
 } from 'lucide-react';
 import NavBar from '@components/layout/NavBar';
+import Footer from '@components/layout/Footer';
 import { cn } from '@libs/utils';
 import { input } from '@libs/style';
 
