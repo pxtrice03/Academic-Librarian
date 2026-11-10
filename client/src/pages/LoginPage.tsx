@@ -45,7 +45,7 @@ const LoginPage = () => (
                 </FormField>
             ))}
 
-            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-accent-foreground hover:bg-accent/90")}>
+            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-primary-foreground hover:bg-accent/90")}>
                 Se connecter
             </button>
         </form>
