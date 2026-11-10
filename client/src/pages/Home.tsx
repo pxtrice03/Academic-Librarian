@@ -85,9 +85,9 @@ const Home = () => {
             <main id="top">
                 {/* HERO: text on the left, mascot on the right (stacked on mobile) */}
                 <section className="border-b border-line">
-                    <div className="max-w-6xl mx-auto grid items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-30">
+                    <div className="max-w-6xl mx-auto grid items-center gap-12 px-6 py-10 md:grid-cols-2 md:py-30">
                         <div className="text-center md:text-left">
-                            <span data-reveal className="inline-block rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground">
+                            <span data-reveal className="hidden rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground md:inline-block">
                                 Pour les établissements scolaires et universitaires de Douala
                             </span>
                             <h1 data-reveal style={{ transitionDelay: "100ms" }} className="mt-6 max-w-3xl text-4xl font-bold leading-tight text-balance md:text-5xl">
@@ -98,10 +98,10 @@ const Home = () => {
                             </p>
                             {/* centered on mobile, left-aligned on desktop */}
                             <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
-                                <NavLink to="/inscription" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
+                                <NavLink to="/inscription" className={cn(button, "bg-accent rounded-btn text-primary-foreground hover:bg-accent/90")}>
                                     Creer un compte <ArrowRight className="size-4" />
                                 </NavLink>
-                                <NavLink to="/#functions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
+                                <NavLink to="/#functions" className={cn(button, "border border-line bg-card rounded-btn hover:bg-muted/5")}>
                                     Découvrir comment ca marche
                                 </NavLink>
                             </div>
@@ -116,8 +116,8 @@ const Home = () => {
 
                 {/* Functionalities */}
                 <section id="functions" className="bg-sec py-10 border-b border-line md:py-24">
-                    <div className="max-w-6xl mx-auto px-6">
-                        <h2 data-reveal className="text-center text-3xl font-bold">Ce que fait la platefrome</h2>
+                    <div className="max-w-6xl mx-auto px-6 md:px-0">
+                        <h2 data-reveal className="text-center font-bold text-4xl md:text-5xl">Ce que fait la platefrome</h2>
                         {/* Features grid */}
                         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                             {features.map(({ icon: Icon, title, text }, i) => (
@@ -125,10 +125,10 @@ const Home = () => {
                                     key={title}
                                     data-reveal
                                     style={{ transitionDelay: `${i * 100}ms` }}
-                                    className="border border-line bg-card p-6"
+                                    className="border border-line bg-card rounded-card p-6"
                                 >
-                                    <Icon className="size-8 text-center" />
-                                    <h3 className="mt-4 font-semibold">{title}</h3>
+                                    <Icon className="size-8 text-center text-accent" />
+                                    <h2 className="mt-4 text-2xl font-semibold">{title}</h2>
                                     <p className="mt-2 text-muted-foreground">{text}</p>
                                 </article>
                             ))}
@@ -139,7 +139,7 @@ const Home = () => {
                 {/* Steps to launch app */}
                 <section id="launch" className="border-b border-line px-6 py-10 md:py-24">
                     <div className="max-w-6xl mx-auto">
-                        <h2 data-reveal className="text-center text-3xl font-bold">Demarrer dans votre etablissement</h2>
+                        <h2 data-reveal className="text-center text-4xl font-bold md:text-5xl">Demarrer dans votre etablissement</h2>
                         <p data-reveal className="max-w-xl mx-auto mt-4 text-center text-muted-foreground">
                             Quatre etapes, dans cet ordre : l'etablissement et ses livres d'abord , le reste ensuite.
                         </p>
@@ -150,15 +150,15 @@ const Home = () => {
                                     key={title}
                                     data-reveal
                                     style={{ transitionDelay: `${(i % 2) * 100}ms` }}
-                                    className="flex gap-4 border border-line bg-card p-6"
+                                    className="flex gap-4 border border-line bg-card rounded-card p-6"
                                 >
                                     <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent font-bold text-primary-foreground">
                                         {i + 1}
                                     </span>
                                     <div>
-                                        <h3 className="flex items-center gap-2 font-semibold">
-                                            {title} <Icon className="size-4 text-accent" />
-                                        </h3>
+                                        <h2 className="flex items-center gap-2 font-semibold text-2xl mb-3">
+                                            {title} <Icon className="size-5 text-accent" />
+                                        </h2>
                                         <p className="mt-1 text-muted-foreground">{text}</p>
                                     </div>
                                 </li>
@@ -168,14 +168,14 @@ const Home = () => {
                 </section>
 
                 {/* CTA */}
-                <section className="px-6">
+                <section className="px-6 bg-sec">
                     <div className="max-w-4xl mx-auto">
-                        <div data-reveal className="rounded-lg bg-sec py-16 text-center text-primary-foreground">
-                            <h2 className="text-3xl font-bold">Pret a numerique votre bibliotheque ?</h2>
-                            <p className="opacity-80">
+                        <div data-reveal className="rounded-lg py-16 text-center text-primary-foreground">
+                            <h2 className="text-3xl mb-3 font-bold md:text-5xl">Pret a numerique votre bibliotheque ?</h2>
+                            <p className="opacity-80 mt-1">
                                 L'inscription de votre etablissement prend quelques minutes.
                             </p>
-                            <NavLink to="/inscription" className={cn(button, "mt-8 bg-accent text-accent-foreground hover:bg-accent/90")}>
+                            <NavLink to="/inscription" className={cn(button, "my-3 bg-accent text-accent-foreground hover:bg-accent/90")}>
                                 Creer un compte <ArrowRight className="size-4" />
                             </NavLink>
                         </div>
