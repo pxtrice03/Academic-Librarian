@@ -6,6 +6,7 @@ import EstablishmentLayout from "@components/layout/EstablishmentLayout";
 import PagePlaceholder from "@pages/PagePlaceholder";
 import { establishmentNav } from "@libs/navigation";
 import NotFoundPage from '@pages/NotFoundPage';
+import EstablishmentsPage from '@pages/EstablishmentsPage';
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/e',
+        element: <EstablishmentsPage />
+        // an establishment route : /e/:slug, /e/:slug/livres, ...
+    },
+    {
+        path: '/e:slug',
         element: <EstablishmentLayout />,
         children: establishmentNav.map(({ path, label }) =>
             path
