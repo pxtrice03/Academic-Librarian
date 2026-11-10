@@ -91,18 +91,18 @@ const Home = () => {
                                 Pour les établissements scolaires et universitaires de Douala
                             </span>
                             <h1 data-reveal style={{ transitionDelay: "100ms" }} className="mt-6 max-w-3xl text-4xl font-bold leading-tight text-balance md:text-5xl">
-                                La bibliothèque de votre établissement, <span className="text-accent">en ligne</span>.
+                                Gerez votre bibliotheque en ligne, <span className="text-accent">gratuitement</span>
                             </h1>
                             <p data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-2xl text-muted-foreground">
-                                Publiez vos livres, ouvrez l'accès à vos lecteurs et suivez chaque emprunt, retour et réservation au même endroit.
+                                Catalogue, pret, retours et lecteurs - tout votre systeme de bibliotheque reuni en un seul endroit, accessible partout.
                             </p>
                             {/* centered on mobile, left-aligned on desktop */}
                             <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
                                 <NavLink to="/inscription" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
-                                    Enregistrer mon établissement <ArrowRight className="size-4" />
+                                    Creer un compte <ArrowRight className="size-4" />
                                 </NavLink>
-                                <NavLink to="/#fonctions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
-                                    Découvrir
+                                <NavLink to="/#functions" className={cn(button, "border border-line bg-card hover:bg-muted/5")}>
+                                    Découvrir comment ca marche
                                 </NavLink>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ const Home = () => {
                                 L'inscription de votre etablissement prend quelques minutes.
                             </p>
                             <NavLink to="/inscription" className={cn(button, "mt-8 bg-accent text-accent-foreground hover:bg-accent/90")}>
-                                Enregistrer mon établissement <ArrowRight className="size-4" />
+                                Creer un compte <ArrowRight className="size-4" />
                             </NavLink>
                         </div>
                     </div>
