@@ -35,13 +35,14 @@ const establishments: Establishment[] = [
  * @returns la page /e avec recherche et grille d'etablissements
  */
 const EstablishmentsPage = () => {
+
     return (
         <div className="min-h-screen flex flex-col">
             <NavBar />
 
             <main className="max-w-6xl mx-auto w-full flex-1 px-6 py-16">
-                <h1 className="text-3xl font-bold">Establishments</h1>
-                <p className="mt-2 text-muted-foreground">Choisissez votre etablissement pour acceder a sa bibliotheque.</p>
+                <h1 className="text-4xl font-bold md:text-5xl">Establishments</h1>
+                <p className="mt-3 text-muted-foreground">Choisissez votre etablissement pour acceder a sa bibliotheque.</p>
 
                 {/* Search bar */}
                 <div className="relative max-w-md mt-8">
@@ -52,20 +53,20 @@ const EstablishmentsPage = () => {
                 {/* responsive grid : 1 / 2 / 3 column */}
                 <div className="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
                 {establishments.map(({ slug, name, type, city, books }) => (
-                    <article key={slug} className="flex flex-col rounded-round border border-line bg-card p-6">
+                    <article key={slug} className="flex flex-col rounded-card border border-line bg-card p-6">
                         <div className="flex items-center justify-between">
-                            <Building2 className="size-8 text-accent" />
-                            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">{type}</span>
+                            <Building2 className="size-6 text-accent" />
+                            <span className="rounded-full bg-accent px-3 py-1 text-sm font-medium text-primary-foreground">{type}</span>
                         </div>
 
-                        <h2 className="mt-4 font-semibold">{name}</h2>
+                        <h2 className="mt-4 font-semibold text-2xl">{name}</h2>
 
                         {/* secondary infos */}
                         <p className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
                             <MapPin className="size-4" /> {city}
                         </p>
                         <p className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
-                            <BookOpen className="size-4" />
+                            <BookOpen className="size-4" /> {books} livres
                         </p>
 
                         <NavLink to={`/e/${slug}`} className="inline-flex items-center mt-6 gap-2 text-sm font-semibold text-accent hover:underline">
