@@ -1,30 +1,30 @@
-export type Role = 'student' | 'teacher' | 'admin'
+export type Role = 'student' | 'teacher' | 'admin';
 
 export interface User {
-    _id: string
-    title: string
-    author: string
-    category: string
-    description: string
-    institution?: string
-    matricule?: string
-    isActive: boolean
-    createdAt: string
+    _id: string;
+    title: string;
+    author: string;
+    category: string;
+    description: string;
+    institution?: string;
+    matricule?: string;
+    isActive: boolean;
+    createdAt: string;
 }
 
 export interface Book {
-    _id: string
-    title: string
-    author: string
-    category: string
-    description?: string
-    totalCopies: number
-    availableCopies: number
+    _id: string;
+    title: string;
+    author: string;
+    category: string;
+    description?: string;
+    totalCopies: number;
+    availableCopies: number;
 }
 
 export type BookRef = Pick<Book, '_id' | 'title' | 'author'>
 
-export type LoanStatus = 'active' | 'overdue' | 'returned'
+export type LoanStatus = 'active' | 'overdue' | 'returned';
 
 export interface Loan {
     _id: string
@@ -33,8 +33,9 @@ export interface Loan {
         name: string
         email: string
     }
-    book: BookRef
-    borrowedAt: string
-    dueAt: string
-    returnedAt: string | status: LoanStatus
+    book: BookRef;
+    borrowedAt: string;
+    dueAt: string;
+    returnedAt: string | null;
+    status: LoanStatus;
 }
