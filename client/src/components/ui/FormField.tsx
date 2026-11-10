@@ -15,7 +15,7 @@ const FormField = ({
     children
 }: FormFieldProps) => (
     <div className="space-y-2">
-        <label htmlFor={htmlFor} className="text-sm font-medium">
+        <label htmlFor={htmlFor} className="text-md font-medium text-primary-foreground">
             {label}
         </label>
         <div className="relative">
