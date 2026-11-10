@@ -22,7 +22,8 @@
   --grey-1: #7a7a7b;
   --grey-2: #616162;
   --grey-dim: #b7b7b7;
-  --radius: 1.25rem;
+  --radius-card: 1.5rem;
+  --radius-btn: 1.125rem;
   --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --sans: "Inter", sans-serif;
@@ -64,37 +65,36 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-foreground: var(--muted);
   --color-line: var(--line);
   --color-border: var(-border);
   --color-danger: var(--danger);
   --color-success: var(--success);
   --color-warning: var(--warning);
-  --radius-round: var(--radius);
+  --radius-card: var(--radius-card);
+  --radius-btn: var(--radius-btn);
   --shadow: var(--shadow);
   --border-line: var(--line);
   --font-sans: var(--sans);
 }
 
-@layer base {
-  body {
-    @apply bg-bg text-pen text-md font-sans m-0 antialiased;
-  }
-  h1, h2, h3 {
-    @apply font-bold font-heading color-[#000000];
-  }
-  p {
-    @apply font-sans text-md mb-2;
-  }
-}
-
-@utility border-inline {
-  border-inline: 1px solid var(--line);
-}
-
 #root {
   min-height: 100svh;
   box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-pen);
+  font-family: var(--sans);
+}
+h1, h2, h3 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+p {
+  font-family: var(--sans);
+  margin-bottom: 4px;
 }
 
 /* buttons, fields, cards, tables */
@@ -130,8 +130,12 @@
 
 /* Mascot: waving arm, pivoting around its base */
 @keyframes mascot-wave {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-16deg); }
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-16deg);
+  }
 }
 .mascot-wave {
   transform-box: fill-box; /* pivot relative to the arm itself, not the whole SVG */
