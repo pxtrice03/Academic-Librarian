@@ -6,7 +6,8 @@ import { button } from '@libs/style';
 
 const links = [
     { to: '/#functions', label: 'Fonctionnalites' },
-    { to: '/#launch', label: 'Comment demarrer' }
+    { to: '/#launch', label: 'Comment demarrer' },
+    { to: '/e', label: 'Etablissements' }
 ];
 
 const NavBar = () => (
