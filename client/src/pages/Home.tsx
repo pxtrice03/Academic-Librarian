@@ -90,18 +90,18 @@ const Home = () => {
                             <span data-reveal className="hidden rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground md:inline-block">
                                 Pour les établissements scolaires et universitaires de Douala
                             </span>
-                            <h1 data-reveal style={{ transitionDelay: "100ms" }} className="mt-6 max-w-3xl text-4xl font-bold leading-tight text-balance md:text-5xl">
+                            <h1 data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-3xl text-4xl font-bold leading-tight text-balance md:text-5xl">
                                 Gerez votre bibliotheque en ligne, <span className="text-accent">gratuitement</span>
                             </h1>
-                            <p data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-2xl text-muted-foreground">
+                            <p data-reveal style={{ transitionDelay: "300ms" }} className="mt-6 max-w-2xl text-muted-foreground">
                                 Catalogue, pret, retours et lecteurs - tout votre systeme de bibliotheque reuni en un seul endroit, accessible partout.
                             </p>
                             {/* centered on mobile, left-aligned on desktop */}
-                            <div data-reveal style={{ transitionDelay: "300ms" }} className="mt-10 flex flex-wrap justify-center gap-4 md:justify-start">
-                                <NavLink to="/inscription" className={cn(button, "bg-accent rounded-btn text-primary-foreground hover:bg-accent/90")}>
+                            <div data-reveal style={{ transitionDelay: "400ms" }} className="mt-8 flex flex-wrap justify-center gap-6 md:justify-start">
+                                <NavLink to="/inscription" className={cn(button, "bg-accent rounded-btn text-primary-foreground hover:bg-accent/85")}>
                                     Creer un compte <ArrowRight className="size-4" />
                                 </NavLink>
-                                <NavLink to="/#functions" className={cn(button, "border border-line bg-card rounded-btn hover:bg-muted/5")}>
+                                <NavLink to="/#functions" className={cn(button, "border border-line bg-card rounded-btn hover:text-primary hover:bg-muted/5")}>
                                     Découvrir comment ca marche
                                 </NavLink>
                             </div>
@@ -159,7 +159,7 @@ const Home = () => {
                                         <h2 className="flex items-center gap-2 font-semibold text-2xl mb-3">
                                             {title} <Icon className="size-5 text-accent" />
                                         </h2>
-                                        <p className="mt-1 text-muted-foreground">{text}</p>
+                                        <p className="mt-1">{text}</p>
                                     </div>
                                 </li>
                             ))}
@@ -172,10 +172,10 @@ const Home = () => {
                     <div className="max-w-4xl mx-auto">
                         <div data-reveal className="rounded-lg py-16 text-center text-primary-foreground">
                             <h2 className="text-3xl mb-3 font-bold md:text-5xl">Pret a numerique votre bibliotheque ?</h2>
-                            <p className="opacity-80 mt-1">
+                            <p className=" mt-1">
                                 L'inscription de votre etablissement prend quelques minutes.
                             </p>
-                            <NavLink to="/inscription" className={cn(button, "my-3 bg-accent text-accent-foreground hover:bg-accent/90")}>
+                            <NavLink to="/inscription" className={cn(button, "rounded-btn my-3 bg-accent text-accent-foreground hover:bg-accent/90")}>
                                 Creer un compte <ArrowRight className="size-4" />
                             </NavLink>
                         </div>
