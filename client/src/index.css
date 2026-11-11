@@ -12,10 +12,11 @@
   --primary: #060607;
   --primary-foreground: #131316;
   --accent: #e08dff;
+  /*--accent: #ffc700;*/
   --accent-foreground: #1b2a41;
   --muted: #717171;
   --border: #e2dccd;
-  --danger: #b91c1c;
+  --danger: #ff0000;
   --success: #15803d;
   --warning: #b45309;
   --grey-0: #939393;
@@ -23,7 +24,7 @@
   --grey-2: #616162;
   --grey-dim: #b7b7b7;
   --radius-card: 1.5rem;
-  --radius-btn: 1.125rem;
+  --radius-btn: 0.875rem;
   --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --sans: "Inter", sans-serif;
