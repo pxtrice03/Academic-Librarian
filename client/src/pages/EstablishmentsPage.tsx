@@ -41,7 +41,7 @@ const EstablishmentsPage = () => {
             <NavBar />
 
             <main className="max-w-6xl mx-auto w-full flex-1 px-6 py-16">
-                <h1 className="text-4xl font-bold md:text-5xl">Establishments</h1>
+                <h1 className="text-4xl font-bold md:text-5xl">Etablissements</h1>
                 <p className="mt-3 text-muted-foreground">Choisissez votre etablissement pour acceder a sa bibliotheque.</p>
 
                 {/* Search bar */}
@@ -53,7 +53,7 @@ const EstablishmentsPage = () => {
                 {/* responsive grid : 1 / 2 / 3 column */}
                 <div className="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
                 {establishments.map(({ slug, name, type, city, books }) => (
-                    <article key={slug} className="flex flex-col rounded-card border border-line bg-card p-6">
+                    <article key={slug} className="flex flex-col rounded-card border border-line bg-card p-6 shadow-xs">
                         <div className="flex items-center justify-between">
                             <Building2 className="size-6 text-accent" />
                             <span className="rounded-full bg-accent px-3 py-1 text-sm font-medium text-primary-foreground">{type}</span>
