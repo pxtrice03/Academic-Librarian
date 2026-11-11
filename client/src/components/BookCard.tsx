@@ -1,7 +1,7 @@
 import { BookOpen } from 'lucide-react';
 import { cn } from '@libs/utils';
 import { button } from '@libs/style';
-import type { Book } from '@libs/book';
+import type { Book } from '@typess/book';
 
 type BookCardProps = { book: Book };
 
@@ -42,7 +42,7 @@ const BookCard = ({ Book }: BookCardProps) => {
                     type="button"
                     className={cn(
                         button,
-                        "mt-5 w-full justify-center"
+                        "mt-5 w-full justify-center",
                         isAvailable
                             ? "bg-primary text-primary-foreground hover:bg-primary/90"
                             : "border border-line hover:bg-muted"
@@ -54,3 +54,5 @@ const BookCard = ({ Book }: BookCardProps) => {
         </article>
     );
 }
+
+export default BookCard;
