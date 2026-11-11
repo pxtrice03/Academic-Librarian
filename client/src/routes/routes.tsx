@@ -7,6 +7,12 @@ import PagePlaceholder from "@pages/PagePlaceholder";
 import { establishmentNav } from "@libs/navigation";
 import NotFoundPage from '@pages/NotFoundPage';
 import EstablishmentsPage from '@pages/EstablishmentsPage';
+import type { ReactNode } from 'react';
+import BooksPage from '@pages/BooksPage';
+
+const pages: Record<string, ReactNode> = {
+    livres: <BooksPage />
+};
 
 const router = createBrowserRouter([
     {
@@ -27,13 +33,12 @@ const router = createBrowserRouter([
         // an establishment route : /e/:slug, /e/:slug/livres, ...
     },
     {
-        path: '/e:slug',
+        path: '/e/:slug',
         element: <EstablishmentLayout />,
-        children: establishmentNav.map(({ path, label }) =>
-            path
-                ? { path, element: <PagePlaceholder title={label} /> }
-                : { index: true, element: <PagePlaceholder title={label} /> }
-        )
+        children: establishmentNav.map(({ path, label }) => {
+            const element = pages[path] ?? <PagePlaceholder title={label} />;
+            return path ? { path, element } : { index: true, element };
+        })
     },
     {
         path: '*',
