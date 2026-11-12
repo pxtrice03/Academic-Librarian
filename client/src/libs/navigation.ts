@@ -3,7 +3,9 @@ import {
     BookOpen,
     CalendarClock,
     History,
-    LayoutDashboard
+    LayoutDashboard,
+    Settings,
+    Users
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -13,31 +15,66 @@ export type NavItem = {
     icon: LucideIcon;
 };
 
-// establishment space menu. path "" = root page (/e)
-export const establishmentNav: NavItem[] = [
+export type NavGroup = {
+    title: string;
+    items: NavItem[];
+};
+
+// establishment space menu. path "" = root page (/e/:slug)
+export const establishmentNav: NavGroup[] = [
     {
-        path: "",
-        label: "Tableau de bord",
-        icon: LayoutDashboard
+        title: "General",
+        items: [{
+            path: "",
+            label: "Tableau de bord",
+            icon: LayoutDashboard
+        }]
     },
     {
-        path: "livres",
-        label: "Livres",
-        icon: BookOpen
+        title: "Catalogue",
+        items: [{
+            path: "livres",
+            label: "Livres",
+            icon: BookOpen
+        }]
     },
     {
-        path: "emprunts",
-        label: "Emprunts",
-        icon: ArrowLeftRight
+        title: "Circulation",
+        items: [
+            {
+                path: "emprunts",
+                label: "Emprunts",
+                icon: ArrowLeftRight
+            },
+            {
+                path: "reservations",
+                label: "Reservations",
+                icon: CalendarClock
+            },
+            {
+                path: "historique",
+                label: "Historique",
+                icon: History
+            }
+        ]
     },
     {
-        path: "reservations",
-        label: "Reservations",
-        icon: CalendarClock
+        title: "Communaute",
+        items: [{
+            path: "lecteurs",
+            label: "Lecteurs",
+            icon: Users
+        }]
     },
     {
-        path: "historique",
-        label: "Historique",
-        icon: History
+        title: "Etablissement",
+        items: [{
+            path: "parametres",
+            label: "Parametres",
+            icon: Settings
+        }]
     }
 ];
+
+// flat list of items
+export const establishmentRoutes: NavItem[] = establishmentNav.flatMap((group) => group.items)
