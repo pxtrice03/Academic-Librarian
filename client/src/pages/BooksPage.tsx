@@ -4,6 +4,7 @@ import { cn } from '@libs/utils';
 import { button, input } from '@libs/style';
 import type { Book } from '@types/book';
 import useBooksStore from '@stores/useBooksStore';
+import Pageheader from '@components/layout/PageHeader';
 
 const books: Book[] = [
     { id: '1', title: 'Algorithmique et structure de donnees', author: 'Dr. Noumssi', category: 'Informatique', copies: 938, available: 552 },
@@ -30,13 +31,18 @@ const BookPage = () => {
 
     return (
         <div>
-            {/* header : title left, add button right (wrap next line on mobile) */}
-            <div className="flex flex-wrap items-center justify-between gap-4">
-                <h1 className="text-2xl font-bold">Livres</h1>
-                <button type="button" className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}>
-                    <Plus className="size-4" /> Ajouter un livre
-                </button>
-            </div>
+            <PageHeader
+                title="Livres"
+                description="Gerer le catalogue de votre etblissement."
+                actions={
+                    <button
+                        type="button"
+                        className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}
+                    >
+                        <Plus className="size-4" /> Ajouter un livre
+                    </button>
+                }
+            />
 
             {/* tools bar : search + filter by category */}
             <div className="flex flex-wrap gap-4 mt-6">
