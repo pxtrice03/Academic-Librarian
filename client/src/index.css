@@ -25,6 +25,7 @@
   --grey-dim: #b7b7b7;
   --radius-card: 1.5rem;
   --radius-btn: 0.875rem;
+  --radius-link: 0.875rem;
   --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --sans: "Inter", sans-serif;
@@ -74,6 +75,7 @@
   --color-warning: var(--warning);
   --radius-card: var(--radius-card);
   --radius-btn: var(--radius-btn);
+  --radius-link: var(--radius-link);
   --shadow: var(--shadow);
   --border-line: var(--line);
   --font-sans: var(--sans);
@@ -88,6 +90,7 @@ body {
   background: var(--background);
   color: var(--text-pen);
   font-family: var(--sans);
+  font-size: 1rem;
 }
 h1, h2, h3 {
   font-family: var(--heading);
