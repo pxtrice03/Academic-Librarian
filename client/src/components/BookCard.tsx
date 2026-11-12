@@ -1,11 +1,11 @@
 import { BookOpen } from 'lucide-react';
 import { cn } from '@libs/utils';
 import { button } from '@libs/style';
-import type { Book } from '@typess/book';
+import type { Book } from '@types/book';
 
 type BookCardProps = { book: Book };
 
-const BookCard = ({ Book }: BookCardProps) => {
+const BookCard = ({ book }: BookCardProps) => {
     const { title, author, category, copies, available } = book;
     const isAvailable = available > 0;
 
