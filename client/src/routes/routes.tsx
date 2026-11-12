@@ -4,13 +4,15 @@ import RegistrationPage from '@pages/RegistrationPage';
 import LoginPage from '@pages/LoginPage';
 import EstablishmentLayout from "@components/layout/EstablishmentLayout";
 import PagePlaceholder from "@pages/PagePlaceholder";
-import { establishmentNav } from "@libs/navigation";
+import { establishmentRoutes } from "@libs/navigation";
 import NotFoundPage from '@pages/NotFoundPage';
 import EstablishmentsPage from '@pages/EstablishmentsPage';
-import type { ReactNode } from 'react';
+import type { ReactElement } from 'react';
 import BooksPage from '@pages/BooksPage';
+import DashboardPage from '@pages/DashboardPage';
 
-const pages: Record<string, ReactNode> = {
+const pages: Record<string, ReactElement> = {
+    "": <DashboardPage />,
     livres: <BooksPage />
 };
 
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
     {
         path: '/e/:slug',
         element: <EstablishmentLayout />,
-        children: establishmentNav.map(({ path, label }) => {
+        children: establishmentRoutes.map(({ path, label }) => {
             const element = pages[path] ?? <PagePlaceholder title={label} />;
             return path ? { path, element } : { index: true, element };
         })
