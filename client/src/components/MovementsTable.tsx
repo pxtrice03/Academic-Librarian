@@ -1,5 +1,9 @@
 import { cn } from '@libs/utils';
 import type { Movement } from '@types/movement';
+import {
+    Pencil,
+    Trash2
+} from 'lucide-react';
 
 type MovementTableProps = { rows: Movement[] };
 
@@ -19,6 +23,7 @@ const MovementsTable = ({ rows }: MovementsTableProps) => {
                             <th key={h} className="px-6 py-3 font-medium">{h}</th>
                         ))}
                     </tr>
+                    <th className="px-6 py-3 text-right font-medium">Actions</th>
                 </thead>
                 <tbody>
                     {rows.map(({ id, reader, book, type, date }) => (
@@ -31,6 +36,24 @@ const MovementsTable = ({ rows }: MovementsTableProps) => {
                                 </span>
                             </td>
                             <td className="px-6 py-2 text-muted">{date}</td>
+                            <td className="px-6 py-4">
+                                <div className="flex justify-end gap-2">
+                                    <button
+                                        type="button"
+                                        aria-label="Modifier"
+                                        className="rounded-btn p-2 text-success/85 transition-colors duration-500 hover:bg-success/10 hover:text-success"
+                                    >
+                                        <Pencil className="size-4" />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        aria-label="Supprimer"
+                                        className="rounded-btn p-2 text-dange/85 transition-colors duration-500 hover:bg-danger/10 hover:text-danger"
+                                    >
+                                        <Trash2 className="size-4" />
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
