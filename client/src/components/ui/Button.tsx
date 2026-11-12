@@ -11,7 +11,9 @@ const buttonVariants = cva(
             danger: "text-danger hover:bg-danger/10 hover:text-danger",
             success: "text-success hover:bg-success/10 hover:text-success"
         },
-        defaultVariant: {}
+        defaultVariants: {
+            variant: "default"
+        }
     }
 );
 
