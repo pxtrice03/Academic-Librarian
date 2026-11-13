@@ -15,12 +15,12 @@ const buttonVariants = cva(
             },
         },
         defaultVariants: {
-            variant: "default",
+            variant: "default"
         },
     }
 );
 
-interface ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>,
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {}
 
 const Button = ({ variant, className, ...props }: ButtonProps) => (
