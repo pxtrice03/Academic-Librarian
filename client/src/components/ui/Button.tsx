@@ -11,8 +11,8 @@ const buttonVariants = cva(
                 secondary: "text-accent hover:underline",
                 outline: "text-muted border border-line bg-card hover:text-primary hover:bg-muted/5",
                 danger: "text-danger hover:bg-danger/10 hover:text-danger",
-                success: "text-success hover:bg-success/10 hover:text-success",
-            },
+                success: "text-success hover:bg-success/10 hover:text-success"
+            }
         },
         defaultVariants: {
             variant: "default"
