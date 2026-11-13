@@ -14,10 +14,10 @@ import { cn } from '@libs/utils';
 import useLenis from '@hooks/useLenis';
 import useReveal from '@hooks/useReveal';
 import NavBar from '@components/layout/NavBar';
-import { button } from '@libs/style';
 import Footer from '@components/layout/Footer';
 import { NavLink } from 'react-router';
 import Mascot from '@components/Mascot';
+import { Button, buttonVariants } from '@components/ui/Button';
 
 type Item = {
     icon: LucideIcon;
@@ -98,7 +98,7 @@ const Home = () => {
                             </p>
                             {/* centered on mobile, left-aligned on desktop */}
                             <div data-reveal style={{ transitionDelay: "400ms" }} className="mt-8 flex flex-wrap shrink-0 justify-center md:gap-2 md:justify-start lg:gap-6">
-                                <NavLink to="/inscription" className={cn(button, "bg-accent rounded-btn text-primary-foreground hover:bg-accent/85")}>
+                                <NavLink to="/inscription" className={cn(buttonVariants(), "bg-accent rounded-btn text-primary-foreground hover:bg-accent/85")}>
                                     Creer un compte <ArrowRight className="size-4" />
                                 </NavLink>
                                 <NavLink to="/#functions" className={cn(button, "hidden border border-line bg-card rounded-btn md:block hover:text-primary hover:bg-muted/5")}>
