@@ -4,7 +4,8 @@ import type { LucideIcon } from 'lucide-react';
 import AuthLayout from '@components/layout/AuthLayout';
 import FormField from '@components/ui/FormField';
 import { cn } from '@libs/utils';
-import { button, input } from '@libs/style';
+import { input } from '@libs/style';
+import { Button } from "@components/ui/Button";
 
 type Field = {
     id: string;
@@ -45,9 +46,9 @@ const LoginPage = () => (
                 </FormField>
             ))}
 
-            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-primary-foreground hover:bg-accent/90")}>
+            <Button className="w-full" type="submit">
                 Se connecter
-            </button>
+            </Button>
         </form>
     </AuthLayout>
 );
