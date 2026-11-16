@@ -17,7 +17,8 @@ import NavBar from '@components/layout/NavBar';
 import Footer from '@components/layout/Footer';
 import { NavLink } from 'react-router';
 import Mascot from '@components/Mascot';
-import { Button, buttonVariants } from '@components/ui/Button';
+import { buttonVariants } from '@components/ui/Button';
+import { button } from '@libs/style';
 
 type Item = {
     icon: LucideIcon;
@@ -98,10 +99,10 @@ const Home = () => {
                             </p>
                             {/* centered on mobile, left-aligned on desktop */}
                             <div data-reveal style={{ transitionDelay: "400ms" }} className="mt-8 flex flex-wrap shrink-0 justify-center md:gap-2 md:justify-start lg:gap-6">
-                                <NavLink to="/inscription" className={cn(buttonVariants(), "bg-accent rounded-btn text-primary-foreground hover:bg-accent/85")}>
+                                <NavLink to="/inscription" className={buttonVariants({ variant: "default" })}>
                                     Creer un compte <ArrowRight className="size-4" />
                                 </NavLink>
-                                <NavLink to="/#functions" className={cn(button, "hidden border border-line bg-card rounded-btn md:block hover:text-primary hover:bg-muted/5")}>
+                                <NavLink to="/#functions" className={buttonVariants({ variant: "outline" })}>
                                     Découvrir comment ca marche
                                 </NavLink>
                             </div>
@@ -175,7 +176,7 @@ const Home = () => {
                             <p className="text-muted mt-1">
                                 L'inscription de votre etablissement prend quelques minutes.
                             </p>
-                            <NavLink to="/inscription" className={cn(button, "rounded-btn my-3 bg-accent text-accent-foreground hover:bg-accent/90")}>
+                            <NavLink to="/inscription" className={buttonVariants({ variant: "default" })}>
                                 Creer un compte <ArrowRight className="size-4" />
                             </NavLink>
                         </div>
