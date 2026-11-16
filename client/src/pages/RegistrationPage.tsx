@@ -9,9 +9,10 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import FormField from '@components/ui/FormField';
 import { cn } from '@libs/utils';
-import { button, input } from '@libs/style';
+import { input } from '@libs/style';
 import Mascot from '@components/Mascot';
 import AuthLayout from '@components/layout/AuthLayout';
+import { Button } from "@components/ui/Button";
 
 type Field = {
     id: string;
@@ -62,10 +63,9 @@ const RegistrationPage = () => (
                 </FormField>
             ))}
 
-            {/* submit button full width */}
-            <button type="submit" className={cn(button, "w-full justify-center bg-accent text-sm text-primary-foreground hover:bg-accent/90")}>
+            <Button className="w-full" type="submit">
                 Creer le compte de l'etalbissement
-            </button>
+            </Button>
         </form>
     </AuthLayout>
 );
