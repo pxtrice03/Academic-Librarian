@@ -42,14 +42,14 @@ const MovementsTable = ({ rows }: MovementsTableProps) => {
                                     <Button
                                         type="button"
                                         aria-label="Modifier"
-                                        className="rounded-btn p-2 text-success/85 transition-colors duration-500 hover:bg-success/10 hover:text-success"
+                                        variant="success"
                                     >
                                         <Pencil className="size-4" />
                                     </Button>
                                     <Button
                                         type="button"
                                         aria-label="Supprimer"
-                                        className="rounded-btn p-2 text-dange/85 transition-colors duration-500 hover:bg-danger/10 hover:text-danger"
+                                        variant="danger"
                                     >
                                         <Trash2 className="size-4" />
                                     </Button>
