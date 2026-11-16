@@ -1,6 +1,6 @@
 import { BookOpen } from 'lucide-react';
 import { cn } from '@libs/utils';
-import { button } from '@libs/style';
+import { Button } from '@components/ui/Button';
 import type { Book } from '@types/book';
 
 type BookCardProps = { book: Book };
@@ -38,7 +38,7 @@ const BookCard = ({ book }: BookCardProps) => {
                 </p>
 
                 {/* mt-auto : button always at the bottom of the card */}
-                <button
+                <Button
                     type="button"
                     className={cn(
                         button,
@@ -49,7 +49,7 @@ const BookCard = ({ book }: BookCardProps) => {
                     )}
                 >
                     {isAvailable ? "Emprunter" : "Reserver"}
-                </button>
+                </Button>
             </div>
         </article>
     );
