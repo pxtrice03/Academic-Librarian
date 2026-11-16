@@ -2,7 +2,6 @@ import { NavLink } from 'react-router';
 import { Library, Menu, X } from 'lucide-react';
 import { cn } from '@libs/utils';
 import { APP_NAME } from '@libs/constants';
-import { button } from '@libs/style';
 import useAuthStore from '@stores/useAuthStore';
 import { useState } from 'react';
 import { buttonVariants } from '@components/ui/Button';
