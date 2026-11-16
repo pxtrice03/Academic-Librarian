@@ -2,12 +2,14 @@ import {
     AlertTriangle,
     ArrowLeftRight,
     BookOpen,
-    CalendarClock
+    CalendarClock,
+    Plus
 } from 'lucide-react';
 import StatCard from '@components/layout/StatCard';
 import MovementsTable from '@components/MovementsTable';
 import type { Movement } from '@types/movement';
 import PageHeader from '@components/layout/PageHeader';
+import { Button } from "@components/ui/Button";
 
 const stats = [
     { label: "Livres au catalogue", value: 1240, icon: BookOpen },
@@ -26,7 +28,15 @@ const recent: Movement[] = [
 const DashboardPage = () => {
     return (
         <div>
-            <h1 className="text-3xl font-bold">Tableau de bord</h1>
+            <PageHeader
+                title="Livres"
+                description="Gerer le catalogue de votre etablissement."
+                actions={
+                    <Button type="button">
+                        <Plus className="size-4" /> Ajouter un livre
+                    </Button>
+                }
+            />
 
             <div className="grid grid-cols-2 gap-4 mt-6 md:gap-6 xl:grid-cols-4">
                 {stats.map((s) => (
