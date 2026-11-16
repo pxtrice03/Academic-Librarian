@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import { ArrowLeft } from "lucide-react";
 import Mascot from "@components/Mascot";
 import { cn } from "@libs/utils";
-import { button } from "@libs/style";
+import { buttonVariants } from "@components/ui/Button";
 
 const NotFoundPage = () => (
     <div className="flex min-h-screen flex-col">
@@ -14,7 +14,7 @@ const NotFoundPage = () => (
             <p className="mt-2 max-w-md text-muted-foreground">
                 La page que vous cherchez n'existe pas ou a ete deplacee. Même notre bibliothecaire s'est perdu.
             </p>
-            <NavLink to="/" className={cn(button, "rounded-btn mt-8 bg-accent text-primary-foreground hover:bg-accent/90")}>
+            <NavLink to="/" className={cn(buttonVariants(), "mt-8")}>
                 <ArrowLeft className="size-4" /> Retour a l'accueil
             </NavLink>
         </main>
