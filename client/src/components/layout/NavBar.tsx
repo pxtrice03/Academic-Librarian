@@ -5,6 +5,7 @@ import { APP_NAME } from '@libs/constants';
 import { button } from '@libs/style';
 import useAuthStore from '@stores/useAuthStore';
 import { useState } from 'react';
+import { buttonVariants } from '@components/ui/Button';
 
 const links = [
     { to: '/#functions', label: 'Fonctionnalites' },
@@ -35,7 +36,7 @@ const NavBar = () => {
                             <NavLink
                                 key={to}
                                 to={to}
-                                className="transition-colors duration-500 hover:text-accent"
+                                className={cn(buttonVariants({ variant: "secondary" }), "text-muted hover:no-underline hover:text-accent")}
                             >
                                 {label}
                             </NavLink>
@@ -47,7 +48,7 @@ const NavBar = () => {
                         {user ? (
                             <NavLink
                                 to={use.slug ? `/e/${user.slug}` : "/e"}
-                                className={cn(button, "bg-accent text-accent-foreground duration-500  hover:bg-accent/85")}
+                                className={buttonVariants()}
                             >
                                 Mon espace
                             </NavLink>
@@ -55,13 +56,13 @@ const NavBar = () => {
                             <>
                                 <NavLink
                                     to='/connexion'
-                                    className={cn(button, "hidden rounded-btn text-muted md:block md:border md:border-line hover:text-primary hover:bg-muted/5")}
+                                    className={cn(buttonVariants({ variant: "outline" }), "hidden md:block md:border md:border-line hover:text-primary hover:bg-muted/5")}
                                 >
                                     Connexion
                                 </NavLink>
                                 <NavLink
                                     to="/inscription"
-                                    className={cn(button, "bg-accent rounded-btn text-accent-foreground hover:bg-accent/85 hover:text-primary")}
+                                    className={cn(buttonVariants({ variant: "default" }))}
                                 >
                                     Commencer
                                 </NavLink>
@@ -107,7 +108,7 @@ const NavBar = () => {
                             {user ? (
                                 <NavLink
                                     to={user.slug ? `/e/${user.slug}` : "/e"}
-                                    onClick={cn(button, "bg-accent text-accent-foreground text-center")}
+                                    onClick={buttonVariants()}
                                 >
                                     Mon espace
                                 </NavLink>
@@ -116,7 +117,7 @@ const NavBar = () => {
                                     <NavLink
                                         to="/connexion"
                                         onClick={closeMenu}
-                                        className={cn(button, "rounded-btn border border-line")}
+                                        className={buttonVariants({ variant: "outline" })}
                                     >
                                         Connexion
                                     </NavLink>
@@ -124,7 +125,7 @@ const NavBar = () => {
                                     <NavLink
                                         to="/inscription"
                                         onClick={closeMenu}
-                                        className={cn(button, "rounded-btn bg-accent text-accent-foreground")}
+                                        className={buttonVariants({ variant: "default" })}
                                     >
                                         Commencer
                                     </NavLink>
