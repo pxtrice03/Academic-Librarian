@@ -1,10 +1,11 @@
 import { Plus, Search } from 'lucide-react';
 import BookCard from '@components/BookCard';
 import { cn } from '@libs/utils';
-import { button, input } from '@libs/style';
+import { input } from '@libs/style';
 import type { Book } from '@types/book';
 import useBooksStore from '@stores/useBooksStore';
 import Pageheader from '@components/layout/PageHeader';
+import { Button } from "@components/ui/Button";
 
 const books: Book[] = [
     { id: '1', title: 'Algorithmique et structure de donnees', author: 'Dr. Noumssi', category: 'Informatique', copies: 938, available: 552 },
@@ -35,12 +36,11 @@ const BookPage = () => {
                 title="Livres"
                 description="Gerer le catalogue de votre etblissement."
                 actions={
-                    <button
+                    <Button
                         type="button"
-                        className={cn(button, "bg-accent text-primary-foreground hover:bg-accent/90")}
                     >
                         <Plus className="size-4" /> Ajouter un livre
-                    </button>
+                    </Button>
                 }
             />
 
