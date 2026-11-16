@@ -1,4 +1,4 @@
-export type MovementStatus = "en_cours" | "en_retard" | "rendu" | "en_attende" | "annule";
+export type MovementStatus = "en_cours" | "en_retard" | "rendu" | "en_attente" | "annule";
 
 export type Movement = {
     id: string;
