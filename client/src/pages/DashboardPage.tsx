@@ -29,13 +29,8 @@ const DashboardPage = () => {
     return (
         <div>
             <PageHeader
-                title="Livres"
-                description="Gerer le catalogue de votre etablissement."
-                actions={
-                    <Button type="button">
-                        <Plus className="size-4" /> Ajouter un livre
-                    </Button>
-                }
+                title="Tableau de bord"
+                description="Vue d'enssemble de votre bibliotheque.'"
             />
 
             <div className="grid grid-cols-2 gap-4 mt-6 md:gap-6 xl:grid-cols-4">
