@@ -18,7 +18,6 @@ import Footer from '@components/layout/Footer';
 import { NavLink } from 'react-router';
 import Mascot from '@components/Mascot';
 import { buttonVariants } from '@components/ui/Button';
-import { button } from '@libs/style';
 
 type Item = {
     icon: LucideIcon;
@@ -91,8 +90,8 @@ const Home = () => {
                             <span data-reveal className="hidden rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground lg:inline-block">
                                 Pour les établissements scolaires et universitaires de Douala
                             </span>
-                            <h1 data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tighter leading-tight text-balance md:text-5xl">
-                                Gerez votre bibliotheque en ligne, <span className="text-accent">gratuitement</span>
+                            <h1 data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-3xl text-7xl font-extrabold tracking-tighter leading-tight text-balance md:text-5xl">
+                                Gerez votre bibliotheque en ligne, <span className="text-accent italic">gratuitement</span>
                             </h1>
                             <p data-reveal style={{ transitionDelay: "300ms" }} className="mt-6 max-w-2xl text-muted">
                                 Catalogue, pret, retours et lecteurs - tout votre systeme de bibliotheque reuni en un seul endroit, accessible partout.
