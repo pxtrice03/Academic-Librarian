@@ -12,7 +12,7 @@ import { cn } from '@libs/utils';
 import { input } from '@libs/style';
 import Mascot from '@components/Mascot';
 import AuthLayout from '@components/layout/AuthLayout';
-import { Button } from "@components/ui/Button";
+import { Button, buttonVariants } from "@components/ui/Button";
 
 type Field = {
     id: string;
@@ -63,7 +63,7 @@ const RegistrationPage = () => (
                 </FormField>
             ))}
 
-            <Button className="w-full" type="submit">
+            <Button className={cn(buttonVariants(), "w-full")} type="submit">
                 Creer le compte de l'etalbissement
             </Button>
         </form>
