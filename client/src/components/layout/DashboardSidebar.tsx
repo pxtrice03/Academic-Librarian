@@ -21,7 +21,7 @@ type DashboardSidebarProps = {
 };
 
 const DashboardSidebar = ({
-    groups,
+    groups, // establishment nav links group
     basePath,
     title,
     backLink,
@@ -46,6 +46,8 @@ const DashboardSidebar = ({
                     <ArrowLeft className="size-3" /> {backLink.label}
                 </NavLink>
             )}
+
+            <p className="rounded-btn bg-muted/10 px-3 py-2 text-sm font-bold capitalize truncate">{title}</p>
 
             {/* current context : establishment */}
             <nav className="flex flex-col gap-6">
