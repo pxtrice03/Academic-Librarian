@@ -1,10 +1,5 @@
 import { cn } from '@libs/utils';
-import type { Movement } from '@types/movement';
-import {
-    Pencil,
-    Trash2
-} from 'lucide-react';
-import { Button } from "@components/ui/Button";
+import type { Movement, MovementStatus } from '@types/movement';
 import type { ReactNode } from "react";
 
 type MovementTableProps = {
