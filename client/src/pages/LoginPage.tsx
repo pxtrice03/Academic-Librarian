@@ -5,7 +5,7 @@ import AuthLayout from '@components/layout/AuthLayout';
 import FormField from '@components/ui/FormField';
 import { cn } from '@libs/utils';
 import { input } from '@libs/style';
-import { Button } from "@components/ui/Button";
+import { Button, buttonVariants } from "@components/ui/Button";
 
 type Field = {
     id: string;
@@ -46,7 +46,7 @@ const LoginPage = () => (
                 </FormField>
             ))}
 
-            <Button className="w-full" type="submit">
+            <Button className={cn(buttonVariants(), "w-full")} type="submit">
                 Se connecter
             </Button>
         </form>
