@@ -17,7 +17,7 @@ const EstablishmentLayout2 = () => {
         <div className="min-h-screen md:flex">
             <div className="flex items-center justify-between border-b border-line bg-bg p-4 md:hidden">
                 <span className="font-bold text-primary">{APP_NAME}</span>
-                <Button type="button" aria-label="Ouvrir le menu" onClick={() => setOpen((o) => !o)}>
+                <Button type="button" aria-label="Ouvrir le menu" variant="outline" onClick={() => setOpen((o) => !o)}>
                     <Menu className="size-6" />
                 </Button>
             </div>
