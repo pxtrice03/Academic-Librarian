@@ -17,7 +17,7 @@ const AuthLayout = ({
 
         <main className="flex flex-1 items-center justify-center px-6 py-16">
             {/* form cart */}
-            <div className="w-full max-w-lg border border-line bg-card p-8 shadow-sm">
+            <div className="w-full max-w-lg border border-line bg-card p-8 shadow-sm rounded-card">
                 <h1 className="text-4xl font-bold">{title}</h1>
                 <p className="mt-2 text-sm text-muted-foreground md:text-md">{description}</p>
 
