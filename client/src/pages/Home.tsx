@@ -90,7 +90,7 @@ const Home = () => {
                             <span data-reveal className="hidden rounded-full bg-accent/30 border-2 border-accent px-4 py-1 text-xs font-medium text-muted-foreground lg:inline-block">
                                 Pour les établissements scolaires et universitaires de Douala
                             </span>
-                            <h1 data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-3xl text-7xl font-extrabold tracking-tighter leading-tight text-balance md:text-5xl">
+                            <h1 data-reveal style={{ transitionDelay: "200ms" }} className="mt-6 max-w-3xl text-3xl font-extrabold tracking-tighter leading-tight text-balance md:text-6xl">
                                 Gerez votre bibliotheque en ligne, <span className="text-accent italic">gratuitement</span>
                             </h1>
                             <p data-reveal style={{ transitionDelay: "300ms" }} className="mt-6 max-w-2xl text-muted">
