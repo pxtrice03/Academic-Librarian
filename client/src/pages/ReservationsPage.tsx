@@ -1,5 +1,5 @@
 import { Check, X } from "lucide-react";
-import MovementsPage from "pages/MovementsPage";
+import MovementsPage from "@pages/MovementsPage";
 import ActionButton from "@components/ui/ActionButton";
 import type { Movement } from "@types/movement";
 
