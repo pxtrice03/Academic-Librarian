@@ -34,7 +34,7 @@ const BookPage = () => {
         <div>
             <PageHeader
                 title="Livres"
-                description="Gerer le catalogue de votre etblissement."
+                description="Gerez le catalogue de votre etblissement."
                 actions={
                     <Button
                         type="button"
