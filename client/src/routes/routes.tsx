@@ -10,10 +10,16 @@ import EstablishmentsPage from '@pages/EstablishmentsPage';
 import type { ReactElement } from 'react';
 import BooksPage from '@pages/BooksPage';
 import DashboardPage from '@pages/DashboardPage';
+import LoansPage from "@pages/LoansPage";
+import ReservationsPage from "@pages/ReservationsPage";
+import HistoryPage from "@pages/HistoryPage";
 
 const pages: Record<string, ReactElement> = {
     "": <DashboardPage />,
-    livres: <BooksPage />
+    livres: <BooksPage />,
+    emprunts: <LoansPage />,
+    resevations: <ReservationsPage />,
+    history: <HistoryPage />
 };
 
 const router = createBrowserRouter([
