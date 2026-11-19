@@ -1,7 +1,7 @@
 import { Download } from "lucide-react";
 import MovementsPage from "@pages/MovementsPage";
 import { cn } from "@libs/utils";
-import { Button } from "@components/uiButton";
+import { Button } from "@components/ui/Button";
 import type { Movement } from "@types/movement";
 
 const history: Movement[] = [
@@ -15,7 +15,7 @@ const HistoryPage = () => {
             title="Historique"
             description="Tous les mouvements de livres de l'établissement."
             actions={
-                <Bbutton type="button" variant="outline">
+                <Button type="button" variant="outline">
                     <Download className="size-4" /> Exporter
                 </Button>
             }
