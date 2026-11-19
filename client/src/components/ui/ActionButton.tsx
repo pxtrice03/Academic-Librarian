@@ -11,7 +11,7 @@ type ActionButtonProps = {
 const ActionButton = ({
     label,
     icon: Icon,
-    danger: false
+    danger = false
 }: ActionButtonProps) => {
     return (
         <Button
