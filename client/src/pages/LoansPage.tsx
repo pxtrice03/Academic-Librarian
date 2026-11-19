@@ -6,8 +6,8 @@ import {
 import MovementsPage from "@pages/MovementsPage";
 import ActionButton from "@components/ui/ActionButton";
 import { cn } from "@libs/utils";
-import { Button } from "@components/Button";
-import { Movement } from "@types/movement";
+import { Button } from "@components/ui/Button";
+import type { Movement } from "@types/movement";
 
 const loans: Movement[] = [
     { id: "1", reader: "Limune", book: "Demon King", type: "emprunt", status: "en_cours", date: "04/11/2026" },
