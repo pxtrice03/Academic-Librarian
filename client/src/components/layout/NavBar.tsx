@@ -55,7 +55,7 @@ const NavBar = () => {
                             <>
                                 <NavLink
                                     to='/connexion'
-                                    className={cn(buttonVariants({ variant: "outline" }), "hidden md:block md:border md:border-line hover:text-primary hover:bg-muted/5")}
+                                    className={cn(buttonVariants({ variant: "outline" }), "hidden md:block")}
                                 >
                                     Connexion
                                 </NavLink>
