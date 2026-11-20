@@ -5,7 +5,8 @@ import {
     History,
     LayoutDashboard,
     Settings,
-    Users
+    Users,
+    Building2
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -75,6 +76,22 @@ export const establishmentNav: NavGroup[] = [
         }]
     }
 ];
+
+// Menu de la plateforme admin. path "" = index de /admin.
+export const adminNav: NavGroup[] = [
+    { title: "Vue d'ensemble", items: [{ path: "", label: "Tableau de bord", icon: LayoutDashboard }] },
+    {
+        title: "Gestion",
+        items: [
+            { path: "etablissements", label: "Établissements", icon: Building2 },
+            { path: "utilisateurs", label: "Utilisateurs", icon: Users },
+        ],
+    },
+    { title: "Contenu", items: [{ path: "livres", label: "Livres", icon: BookOpen }] }
+];
+
+// Liste a plat des éléments admin : source des routes enfants.
+export const adminRoutes: NavItem[] = adminNav.flatMap((group) => group.items);
 
 // flat list of items
 export const establishmentRoutes: NavItem[] = establishmentNav.flatMap((group) => group.items)
