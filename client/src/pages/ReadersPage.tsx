@@ -5,12 +5,13 @@ import ActionButton from "@components/ui/ActionButton";
 import { cn } from "@libs/utils";
 import { input } from "@libs/style";
 import type { Reader } from "@types/reader";
+import SearchBar from "@components/ui/SearchBar";
 
 const readers: Reader[] = [
     { id: "1", name: "Song Jin Woo", email: "jin.woo@gmail.cm", activeLoans: 2, status: "actif" },
     { id: "2", name: "Mistourah", email: "mistourah@secretstory.cm", activeLoans: 1, status: "actif" },
     { id: "3", name: "Lumine", email: "lumine@immortal.cm", activeLoans: 0, status: "actif" },
-    { id: "4", name: "orly love", email: "orly@love.cm", activeLoans: 3, status: "suspendu" }
+    { id: "4", name: "Orly Love", email: "orly@love.cm", activeLoans: 3, status: "suspendu" }
 ];
 
 const columns: Column<Reader>[] = [
@@ -24,7 +25,7 @@ const columns: Column<Reader>[] = [
             <span
                 className={cn(
                     "rounded-full px-3 text-xs font-medium",
-                    r.status === "actif" ? "bg-primary/10 text-primary" : "bg-danger/10 text-danger"
+                    r.status === "actif" ? "bg-muted/10 text-primary" : "bg-danger/10 text-danger"
                 )}
             >
                 {r.status === "actif" ? "Actif" : "Suspendu"}

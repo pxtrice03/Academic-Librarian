@@ -30,7 +30,7 @@ const DashboardPage = () => {
         <div>
             <PageHeader
                 title="Tableau de bord"
-                description="Vue d'enssemble de votre bibliotheque.'"
+                description="Vue d'enssemble de votre bibliotheque."
             />
 
             <div className="grid grid-cols-2 gap-4 mt-6 md:gap-6 xl:grid-cols-4">

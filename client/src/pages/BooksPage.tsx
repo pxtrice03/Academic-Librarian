@@ -4,7 +4,7 @@ import { cn } from '@libs/utils';
 import { input } from '@libs/style';
 import type { Book } from '@types/book';
 import useBooksStore from '@stores/useBooksStore';
-import Pageheader from '@components/layout/PageHeader';
+import PageHeader from '@components/layout/PageHeader';
 import { Button } from "@components/ui/Button";
 
 const books: Book[] = [

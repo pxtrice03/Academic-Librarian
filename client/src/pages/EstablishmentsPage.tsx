@@ -10,15 +10,8 @@ import NavBar from '@components/layout/NavBar';
 import Footer from '@components/layout/Footer';
 import { cn } from '@libs/utils';
 import { input } from '@libs/style';
-
-// A registered establishment (temporary replaced by de API)
-type Establishment = {
-    slug: string;
-    name: string;
-    type: string;
-    city: string;
-    books: number;
-};
+import { buttonVariants } from "@components/ui/Button";
+import type { Establishment } from "@types/establishment";
 
 // fictional data : only there to validate the UI
 const establishments: Establishment[] = [
@@ -46,34 +39,34 @@ const EstablishmentsPage = () => {
 
                 {/* Search bar */}
                 <div className="relative max-w-md mt-8">
-                    <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                    <Search className="pointer-events-none absolute left-3 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" />
                     <input type="search" placeholder="Rechercher un etablissement" className={cn(input)} />
                 </div>
 
                 {/* responsive grid : 1 / 2 / 3 column */}
-                <div className="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
-                {establishments.map(({ slug, name, type, city, books }) => (
-                    <article key={slug} className="flex flex-col rounded-card border border-line bg-card p-6 shadow-xs">
-                        <div className="flex items-center justify-between">
-                            <Building2 className="size-6 text-accent" />
-                            <span className="rounded-full bg-accent px-3 py-1 text-sm font-medium text-primary-foreground">{type}</span>
-                        </div>
+                <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
+                    {establishments.map(({ slug, name, type, city, books }) => (
+                        <article key={slug} className="flex flex-col rounded-card border border-line bg-card p-6 shadow-xs">
+                            <div className="flex items-center justify-between">
+                                <Building2 className="size-6 text-accent" />
+                                <span className="rounded-full bg-accent px-3 py-1 text-sm font-medium text-primary-foreground">{type}</span>
+                            </div>
 
-                        <h2 className="mt-4 font-semibold text-2xl">{name}</h2>
+                            <h2 className="mt-4 font-semibold text-2xl truncate">{name}</h2>
 
-                        {/* secondary infos */}
-                        <p className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
-                            <MapPin className="size-4" /> {city}
-                        </p>
-                        <p className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
-                            <BookOpen className="size-4" /> {books} livres
-                        </p>
+                            {/* secondary infos */}
+                            <p className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                                <MapPin className="size-4" /> {city}
+                            </p>
+                            <p className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
+                                <BookOpen className="size-4" /> {books} livres
+                            </p>
 
-                        <NavLink to={`/e/${slug}`} className="inline-flex items-center mt-6 gap-2 text-sm font-semibold text-accent hover:underline">
-                            Acceder <ArrowRight className="size-4" />
-                        </NavLink>
-                    </article>
-                ))}
+                            <NavLink to={`/e/${slug}`} className={buttonVariants({ variant: "secondary" })}>
+                                Acceder <ArrowRight className="size-4" />
+                            </NavLink>
+                        </article>
+                    ))}
                 </div>
             </main>
 

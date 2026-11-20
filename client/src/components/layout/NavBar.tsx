@@ -73,7 +73,7 @@ const NavBar = () => {
                     <button
                         type="button"
                         onClick={() => setisOpen(!isOpen)}
-                        className="lg:hidden p-2 text-primary "
+                        className="lg:hidden p-2 text-primary"
                         aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
                         aria-expanded={isOpen}
                     >

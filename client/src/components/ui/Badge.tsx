@@ -1,18 +1,21 @@
-type Tone = 'ok' | 'warn' | 'bad' | 'neutral';
+import { cn } from "@libs/utils";
+
+export type Tone = "primary" | "accent" | "muted" | "danger";
+
 const tones: Record<Tone, string> = {
-    ok: 'bg-success/15 text-success',
-    warn: 'bg-accent/15 text-accent',
-    bad: 'bg-danger/15 text-danger',
-    neutral: 'bg-muted/15 text-muted-foreground'
+    primary: "bg-primary/10 text-primary",
+    accent: "bg-accent/15 text-accent",
+    muted: "bg-muted text-muted",
+    danger: "bg-danger/10 text-danger"
 };
 
-interface BadgeProps {
-    tone?: Tone;
-    children: string;
-}
+type BadgeProps = {
+    label: string;
+    tone: Tone;
+};
 
-const badge = ({ tone = 'neutral', children }: BadgeProps) => {
-    return <span className={`rounded-full px-2 py-0.5 text-sm font-medium ${tones[tone]}`}>{children}</span>
-}
+const Badge = ({ label, tone }: BadgeProps) => (
+    <span className={cn("rounded-full px-3 py-1 text-xs font-medium", tones[tone])}>{label}</span>
+);
 
 export default Badge;

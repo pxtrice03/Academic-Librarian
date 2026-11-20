@@ -7,6 +7,7 @@ import {
 import { cn } from '@libs/utils';
 import { APP_NAME } from '@libs/constants';
 import type { NavGroup } from '@libs/navigation';
+import { buttonVariants } from "@components/ui/Button";
 
 type DashboardSidebarProps = {
     groups: NavGroup[]; // menu sections
@@ -32,7 +33,7 @@ const DashboardSidebar = ({
         <aside className="flex h-full flex-col oveflow-y-auto border-r border-line bg-bg p-4">
             <NavLink
                 to="/"
-                className="flex items-center gap-2 font-bold text-primary"
+                className="hidden flex items-center gap-2 font-bold text-primary mb-2 md:flex"
             >
                 <Library className="size-6" /> {APP_NAME}
             </NavLink>
@@ -41,16 +42,16 @@ const DashboardSidebar = ({
                 <NavLink
                     to={backLink.to}
                     onClick={onNavigate}
-                    className="flex items-center gap-2 text-xs text-muted transition-colors duration-500 hover:text-primary"
+                    className="flex items-center gap-2 text-sm text-muted my-2 transition-colors duration-500 hover:text-primary"
                 >
-                    <ArrowLeft className="size-3" /> {backLink.label}
+                    <ArrowLeft className="size-4" /> {backLink.label}
                 </NavLink>
             )}
 
-            <p className="rounded-btn bg-muted/10 px-3 py-2 text-sm font-bold capitalize truncate">{title}</p>
+            <p className="rounded-btn bg-muted/10 px-3 py-2 mt-3 text-sm font-bold capitalize">{title}</p>
 
             {/* current context : establishment */}
-            <nav className="flex flex-col gap-6">
+            <nav className="flex flex-col gap-6 mt-6">
                 {groups.map(({ title: groupTitle, items }) => (
                     <div key={groupTitle}>
                         {/* section title */}
@@ -83,7 +84,7 @@ const DashboardSidebar = ({
             <NavLink
                 to="/"
                 onClick={onLogout}
-                className="mt-auto flex items-center gap-3 rounded-link  px-3 py-2 text-sm font-medium text-muted trantion-colors hover:bg-danger/10 hover:text-danger"
+                className={buttonVariants({ variant: "danger" })}
             >
                 <LogOut className="size-4" /> Deconnexion
             </NavLink>

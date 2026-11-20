@@ -1,5 +1,5 @@
 import { Search } from "lucide-react";
-import { input } from "@libs/styles";
+import { input } from "@libs/style";
 
 type SearchBarProps = {
     placeholder: string;
@@ -19,7 +19,7 @@ const SearchBar = ({
                 type="search"
                 placeholder={placeholder}
                 value={value}
-                onChange={onChange ? (e) => onChange(e.target.value) : underfined}
+                onChange={onChange ? (e) => onChange(e.target.value) : undefined}
                 className={input}
             />
         </div>
