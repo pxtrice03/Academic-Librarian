@@ -2,10 +2,11 @@ import { BookOpen } from 'lucide-react';
 import { cn } from '@libs/utils';
 import { Button } from '@components/ui/Button';
 import type { Book } from '@types/book';
+import type { ReactNode } from "react";
 
-type BookCardProps = { book: Book };
+type BookCardProps = { book: Book; children?: ReactNode };
 
-const BookCard = ({ book }: BookCardProps) => {
+const BookCard = ({ book, children }: BookCardProps) => {
     const { title, author, category, copies, available } = book;
     const isAvailable = available > 0;
 
@@ -37,19 +38,7 @@ const BookCard = ({ book }: BookCardProps) => {
                     {available} / {copies} exemplaires
                 </p>
 
-                {/* mt-auto : button always at the bottom of the card */}
-                <Button
-                    type="button"
-                    className={cn(
-                        button,
-                        "mt-5 w-full justify-center",
-                        isAvailable
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                            : "border border-line hover:bg-muted"
-                    )}
-                >
-                    {isAvailable ? "Emprunter" : "Reserver"}
-                </Button>
+                {children && <div className="mt-auto pt-5">{children}</div>}
             </div>
         </article>
     );
