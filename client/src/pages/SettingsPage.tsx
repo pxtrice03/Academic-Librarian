@@ -45,12 +45,12 @@ const SettingsPage = () => {
 
             <div className="mt-8 max-w-2xl space-y-8">
                 {sections.map(({ title, description, submit, fields }) => (
-                    <form key={title} className="rounded-lg border border-border bg-card p-6">
-                        <h2 className="text-lg font-semibold">{title}</h2>
+                    <form key={title} className="rounded-card border border-line bg-card p-6">
+                        <h2 className="text-lg font-semibold md:text-2xl">{title}</h2>
                         <p className="mt-1 text-sm text-muted-foreground">{description}</p>
 
                         {/* champs générés depuis la configuration */}
-                        <div className="mt-6 space-y-5">
+                        <div className="my-6 space-y-4">
                             {fields.map(({ id, label, type, icon, defaultValue, min }) => (
                                 <FormField key={id} label={label} htmlFor={id} icon={icon}>
                                     <input id={id} name={id} type={type} defaultValue={defaultValue} min={min} className={input} />
@@ -58,9 +58,9 @@ const SettingsPage = () => {
                             ))}
                         </div>
 
-                        <button type="submit" className={cn(button, "mt-6 bg-primary text-primary-foreground hover:bg-primary/90")}>
+                        <Button type="submit">
                             {submit}
-                        </button>
+                        </Button>
                     </form>
                 ))}
             </div>
