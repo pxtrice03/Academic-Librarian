@@ -13,13 +13,17 @@ import DashboardPage from '@pages/DashboardPage';
 import LoansPage from "@pages/LoansPage";
 import ReservationsPage from "@pages/ReservationsPage";
 import HistoryPage from "@pages/HistoryPage";
+import ReadersPage from "@pages/ReadersPage";
+import SettingsPage from "@pages/SettingsPage";
 
 const pages: Record<string, ReactElement> = {
     "": <DashboardPage />,
     livres: <BooksPage />,
     emprunts: <LoansPage />,
     resevations: <ReservationsPage />,
-    history: <HistoryPage />
+    history: <HistoryPage />,
+    lecteurs: <ReadersPage />,
+    parametres: <SettingsPage />
 };
 
 const router = createBrowserRouter([
