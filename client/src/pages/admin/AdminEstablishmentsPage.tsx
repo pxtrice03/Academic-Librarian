@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import PageHeader from "@components/layout/PageHeader";
 import SearchBar from "@components/ui/SearchBar";
-import DataTable, type { Column } from "@components/layout/DataTable";
+import DataTable, { type Column } from "@components/layout/DataTable";
 import ActionButton from "@components/ui/ActionButton";
 import Badge, { type Tone } from "@components/ui/Badge";
 import { cn } from "@libs/utils";
