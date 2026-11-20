@@ -5,7 +5,7 @@ import {
     Clock,
     Mail,
     MapPin
-} from "luicde-react";
+} from "lucide-react";
 import PageHeader from "@components/layout/PageHeader";
 import FormField from "@components/ui/FormField";
 import { cn } from "@libs/utils";
@@ -15,7 +15,7 @@ import type { FieldConfig } from "@types/form";
 
 const sections: { title: string; description: string; submit: string; fields: FieldConfig[] }[] = [
     {
-        title: "Informations de l'etablissement"
+        title: "Informations de l'etablissement",
         description: "Ces informations sont visibles dans  l'annuaire des etablissements.",
         submit: "Enregister les informations",
         fields: [
