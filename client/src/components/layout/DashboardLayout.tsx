@@ -6,6 +6,7 @@ import { APP_NAME} from '@libs/constants';
 import type { NavGroup } from '@libs/navigation';
 import useAuthStore from '@stores/useAuthStore';
 import DashboardSidebar from '@components/layout/DashboardSidebar';
+import { Button } from "@components/ui/Button";
 
 type DashboardLayoutProps = {
     groups: NavGroup[]; // menu section
