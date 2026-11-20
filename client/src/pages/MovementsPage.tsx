@@ -22,7 +22,8 @@ const MovementsPage = ({
     actions,
     rows,
     filterAllLabel,
-    filterOptions
+    filterOptions,
+    renderActions
 }: MovementsPageProps) => {
     return (
         <div>
