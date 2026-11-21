@@ -34,7 +34,8 @@
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
       "@libs/*": ["./src/libs/*"],
-      "@stores/*": ["./src/stores/*"]
+      "@stores/*": ["./src/stores/*"],
+      "@data/*": ["./src/data/*"]
     }
   },
   "include": ["src"]
