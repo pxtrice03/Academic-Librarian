@@ -1,7 +1,7 @@
 import type { ReactNode } from "React";
 import PageHeader from "@components/layout/PageHeader";
 import SearchBar from "@components/ui/SearchBar";
-import useBooksStore from "@store/useBooksStore";
+import useBooksStore from "@stores/useBooksStore";
 import { books } from "@data/books";
 import { cn } from "@libs/utils";
 import { input } from "@libs/style";
