@@ -90,6 +90,22 @@ export const adminNav: NavGroup[] = [
     { title: "Contenu", items: [{ path: "livres", label: "Livres", icon: BookOpen }] }
 ];
 
+// Menu de l'espace lecteur. path "" = index de /mon-espace.
+export const readerNav: NavGroup[] = [
+    { title: "Bibliothèque", items: [{ path: "", label: "Catalogue", icon: BookOpen }] },
+{
+    title: "Mes activités",
+    items: [
+        { path: "emprunts", label: "Mes emprunts", icon: ArrowLeftRight },
+        { path: "reservations", label: "Mes réservations", icon: CalendarClock },
+        { path: "historique", label: "Mon historique", icon: History },
+    ],
+},
+];
+
+// Liste a plat des elements lecteur : source des routes enfants.
+export const readerRoutes: NavItem[] = readerNav.flatMap((group) => group.items);
+
 // Liste a plat des éléments admin : source des routes enfants.
 export const adminRoutes: NavItem[] = adminNav.flatMap((group) => group.items);
 
