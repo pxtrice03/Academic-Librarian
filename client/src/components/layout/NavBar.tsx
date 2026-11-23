@@ -5,6 +5,7 @@ import { APP_NAME } from '@libs/constants';
 import useAuthStore from '@stores/useAuthStore';
 import { useState } from 'react';
 import { buttonVariants } from '@components/ui/Button';
+import MascotLogo from "@components/MascotLogo";
 
 const links = [
     { to: '/#functions', label: 'Fonctionnalites' },
@@ -26,7 +27,7 @@ const NavBar = () => {
                         onClick={closeMenu}
                         className="flex items-center gap-2 font-bold text-primary text-lg md:text-2xl"
                     >
-                        <Library className="size-7" /> {APP_NAME}
+                        <MascotLogo className="h-8" /> {APP_NAME}
                     </NavLink>
 
                     {/* Desktop nav */}
