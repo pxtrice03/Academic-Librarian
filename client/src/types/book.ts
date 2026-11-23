@@ -3,6 +3,6 @@ export type Book = {
     title: string;
     author: string;
     category: string;
-    copies: string;
+    copies: number;
     available: number;
 };
