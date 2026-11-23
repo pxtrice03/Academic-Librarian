@@ -6,6 +6,7 @@ import { books } from "@data/books";
 import { cn } from "@libs/utils";
 import { input } from "@libs/style";
 import type { Book } from "@types/book";
+import EmptyState from "@components/layout/EmptyState";
 
 type CatalogViewProps = {
     title: string;
@@ -34,7 +35,7 @@ const CatalogView = ({
 
     return (
         <div>
-            <pageHeader title={title} description={desctiption} actions={actions} />
+            <PageHeader title={title} description={desctiption} actions={actions} />
 
             <div className="mt-6 flex flex-wrap gap-4">
                 <SearchBar placeholder="Rechercher un titre ou un auteur" value={search} onChange={setSearch} />
@@ -47,9 +48,7 @@ const CatalogView = ({
             </div>
 
             {/* message if no result */}
-            {visible.length === 0 && (
-                <p className="mt-8 text-xm text-muted">Aucun livres ne correspond a votre recherche.</p>
-            )}
+            {visible.length === 0 && <EmptyState message="mt-8 text-xm text-mutedAucun livres ne correspond a votre recherche." />}
 
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {visible.map((book) => (
