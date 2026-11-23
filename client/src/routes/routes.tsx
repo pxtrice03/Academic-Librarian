@@ -21,6 +21,12 @@ import AdminDashboardPage from "@pages/AdminDashboardPage";
 import AdminEstablishmentsPage from "@pages/admin/AdminEstablishmentsPage";
 import AdminUsersPage from "@pages/admin/AdminUsersPage";
 import { adminRoutes, type NavItem } from "@libs/navigation";
+import ReaderLayout from "@components/layout/ReaderLayout";
+import MyHistoryPage from "@pages/reader/MyHistoryPage";
+import MyLoansPage from "@pages/reader/MyLoansPage";
+import MyReservationsPage from "@pages/reader/MyReservationsPage";
+import ReaderCatalogPage from "@pages/reader/ReaderCatalogPage";
+import { readerRoutes } from "@libs/navigation";
 
 const pages: Record<string, ReactElement> = {
     "": <DashboardPage />,
@@ -38,10 +44,17 @@ const adminPages: Record<string, ReactElement> = {
     utilisateurs: <AdminUsersPage />
 };
 
+const readerPages: Record<string, ReactNode> = {
+    "": <ReaderCatalogPage />,
+    emprunts: <MyLoansPage />,
+    resevations: <MyReservationsPage />,
+    historique: <MyHistoryPage />
+};
+
 /**
- * Page codée si elle existe, sinon placeholder ; path "" devient la route d'index.
- * @param items - éléments du menu
- * @param pages - pages codées par chemin
+ * Page codee si elle existe, sinon placeholder ; path "" devient la route d'index.
+ * @param items - elements du menu
+ * @param pages - pages codees par chemin
  * @returns les routes enfants
  */
 const toChildren = (items: NavItems[], pages: Record<string, ReactElement>): RouteObject[] =>
@@ -77,6 +90,11 @@ const router = createBrowserRouter([
         path: '/admin',
         element: <AdminLayout />,
         children: toChildren(adminRoutes, adminRoutes)
+    },
+    {
+        path: "/s", // readers' private space
+        element: <ReaderLayout />,
+        children: toChildren(readerRoutes, readerPages)
     },
     {
         path: '*',
