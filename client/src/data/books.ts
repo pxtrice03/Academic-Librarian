@@ -1,4 +1,4 @@
-import { Book } from "@types/book";
+import { type Book } from "@types/book";
 
 export const books: Book[] = [
     { id: "1", title: "Algorithmique et structures de donnees", author: "T. Cormen", category: "Informatique", copies: 6, available: 4 },
